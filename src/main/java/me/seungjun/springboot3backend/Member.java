@@ -1,10 +1,13 @@
 package me.seungjun.springboot3backend;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
 public class Member {
@@ -15,4 +18,8 @@ public class Member {
 
     @Column(name = "name", nullable = false)
     private String name;
+
+    public void changeName(String name) {
+        this.name = name;
+    }
 }
